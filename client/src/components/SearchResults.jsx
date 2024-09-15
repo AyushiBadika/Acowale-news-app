@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Pagination from "./Pagination";
 import LoadingSpinner from "./LoadingSpinner";
@@ -28,13 +28,13 @@ export default function SearchResults({ language, country, query, setActiveCompo
     }
   }
 
-  useState(() => {
+  useEffect(() => {
     searchNews({ page: 1 });
   }, []);
 
   let searchDebounce = null;
 
-  useState(() => {
+  useEffect(() => {
     console.log("inside");
     if (query.length > 3) {
       console.log("here");
