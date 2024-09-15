@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import Footer from "./Footer";
 import Headlines from "./Headlines";
 import SearchResults from "./SearchResults";
 import Filter from "./Filter";
@@ -17,10 +16,9 @@ export default function AppContent() {
     <div className="flex flex-col font-sans justify-center items-center w-full">
       <Toaster />
       <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} setActiveComponent={setActiveComponent} />
-      <Filter selectedCategory={selectedCategory} selectedCountry={selectedCountry} selectedLanguage={selectedLanguage} setSelectedCategory={setSelectedCategory} setSelectedCountry={setSelectedCountry} setSelectedLanguage={setSelectedLanguage} />
+      {/* <Filter selectedCategory={selectedCategory} selectedCountry={selectedCountry} selectedLanguage={selectedLanguage} setSelectedCategory={setSelectedCategory} setSelectedCountry={setSelectedCountry} setSelectedLanguage={setSelectedLanguage} /> */}
       {activeComponent === "headlines" && <Headlines country={selectedCountry} language={selectedLanguage} category={selectedCategory} />}
       {activeComponent === "searchResults" && <SearchResults country={selectedCountry} language={selectedLanguage} query={searchQuery} setActiveComponent={setActiveComponent} />}
-      <Footer />
     </div>
   );
 }

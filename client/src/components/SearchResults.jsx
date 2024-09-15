@@ -36,21 +36,17 @@ export default function SearchResults({ language, country, query, setActiveCompo
   let searchDebounce = null;
 
   useEffect(() => {
-    console.log("inside");
-    if (query.length > 3) {
-      console.log("here");
-      if (searchDebounce) {
-        clearTimeout(searchDebounce);
-      }
-      searchDebounce = setTimeout(() => {
-        searchNews({ page: 1 });
-      }, 1000);
-      console.log("there");
+    console.log(searchDebounce);
+    if (searchDebounce) {
+      clearTimeout(searchDebounce);
     }
+    searchDebounce = setTimeout(() => {
+      searchNews({ page: 1 });
+    }, 1000);
   }, [query]);
 
   return (
-    <div className="px-20 z-10 mt-10 w-full">
+    <div className="md:px-10 px-8 lg:px-20 z-10 mt-10 w-full">
       {pageStates === "LOADING" ? (
         <div className="mb-10">
           <LoadingSpinner />
@@ -70,7 +66,7 @@ export default function SearchResults({ language, country, query, setActiveCompo
           {searchResults.length > 0 ? (
             <>
               <h2 className="text-4xl text-center font-bold underline">Search Results</h2>
-              <div className="grid grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {searchResults?.map((article, index) => (
                   <NewsCard key={index} article={article} />
                 ))}

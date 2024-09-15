@@ -43,7 +43,7 @@ export default function Headlines({ language, country, category }) {
   }, [category, language, country]);
 
   return (
-    <div className="px-20 z-10">
+    <div className="md:px-8 px-8 lg:px-20 z-10">
       {pageStates === "LOADING" && (
         <div className="my-20">
           <LoadingSpinner />
