@@ -3,7 +3,7 @@ import { newsEndpoints } from "../utils.js";
 
 export const newsServices = {
   getHeadlines: async function ({ category, lang, country }) {
-    const apiRes = await axios.get(newsEndpoints.getHeadlines({ category: "", lang: "", country: "" }));
+    const apiRes = await axios.get(newsEndpoints.getHeadlines({ category, lang, country }));
 
     if (apiRes.status === 200) {
       return { data: apiRes.data, ok: true };

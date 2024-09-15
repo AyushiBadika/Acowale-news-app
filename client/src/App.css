@@ -1,0 +1,8 @@
+input,
+select {
+  outline: none;
+}
+
+.active-category {
+  background-color: #04594d;
+}
