@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import TopHeadlines from "./TopHeadlines";
-import OtherHeadlines from "./OtherHeadlines";
 import Pagination from "./Pagination";
-import { toast } from "react-hot-toast";
 import LoadingSpinner from "./LoadingSpinner";
 import NewsCard from "./NewsCard";
 
@@ -16,7 +13,7 @@ export default function SearchResults({ language, country, query, setActiveCompo
   async function searchNews({ page = 1 }) {
     try {
       setPageState("LOADING");
-      const res = await axios.get(`http://localhost:5001/search-news?query=${query}&lang=${language}&country=${country}&page=${page}`);
+      const res = await axios.get(`https://acowale-news-app.onrender.com/search-news?query=${query}&lang=${language}&country=${country}&page=${page}`);
       if (res.status === 200 && res.data.ok) {
         setSearchResults(res.data.data.articles);
         setTotalPages(res.data.data.totalPages);

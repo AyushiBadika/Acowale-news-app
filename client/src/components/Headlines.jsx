@@ -16,7 +16,7 @@ export default function Headlines({ language, country, category }) {
   async function getHeadlines({ page = 1 }) {
     try {
       setPageState("LOADING");
-      const res = await axios.get(`http://localhost:5001/get-headlines?category=${category?.toLowerCase()}&lang=${language}&country=${country}&page=${page}`);
+      const res = await axios.get(`https://acowale-news-app.onrender.com/get-headlines?category=${category?.toLowerCase()}&lang=${language}&country=${country}&page=${page}`);
       if (res.status === 200 && res.data.ok) {
         let headlines = res.data.data.articles;
         if (topHeadlines.length > 0 && page > 1) {
