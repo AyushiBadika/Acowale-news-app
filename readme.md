@@ -1,6 +1,7 @@
 # 📚 News Explorer
 
-Welcome to **News Explorer**, your ultimate destination for discovering the latest headlines and news articles from around the world! Whether you’re interested in top headlines, specific search queries, or filtering news by category, country, and language, News Explorer has got you covered.
+- **Hosted Link**: https://aconews-69bf9.web.app/
+  Welcome to **News Explorer**, your ultimate destination for discovering the latest headlines and news articles from around the world! Whether you’re interested in top headlines, specific search queries, or filtering news by category, country, and language, News Explorer has got you covered.
 
 ## 🌟 Features
 
