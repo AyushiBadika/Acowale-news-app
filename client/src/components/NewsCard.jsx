@@ -7,7 +7,7 @@ export default function NewsCard({ article }) {
       <a href={article.url} className="w-full relative">
         <div className="relative">
           <img className="h-60 w-full object-cover cursor-pointer" src={article.image} />
-          <div className="bg-[rgba(0,0,0,0.25)] absolute top-0 w-full h-60"></div>
+          <div className="bg-[rgba(0,0,0,0.4)] absolute top-0 w-full h-60"></div>
         </div>
         <a className="absolute text-white text-xl font-serif font-semibold bottom-0 left-2 right-2">{article.title}</a>
       </a>
