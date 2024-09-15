@@ -12,6 +12,7 @@ export default function SearchResults({ language, country, query, setActiveCompo
 
   async function searchNews({ page = 1 }) {
     try {
+      setCurrentPage(page);
       setPageState("LOADING");
       const res = await axios.get(`https://acowale-news-app.onrender.com/search-news?query=${query}&lang=${language}&country=${country}&page=${page}`);
       if (res.status === 200 && res.data.ok) {
